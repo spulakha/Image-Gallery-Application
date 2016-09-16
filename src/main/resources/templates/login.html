@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
     <meta charset="utf-8"></meta>
@@ -28,17 +29,32 @@
 
 <body>
 
-  <body>	
+  <body>
 
-    <div class="container">
+ 
+<div class="container" ng-show="!home.authenticated">
+<div>
+    With Github: <a href="/login/github">click here</a>
+  </div>
+</div>
 
-      <form class="form-signin" method="get" action="https://github.com/login/oauth/authorize">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in with Github</button>
-		<input type="hidden" name="client_id"  value="ba924a656b30912297e3" />
-      </form>
-
-    </div> <!-- /container -->
+<script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+<script type="text/javascript">
+  angular.module("app", []).controller("home", function($http) {
+    var self = this;
+    $http.get("/user").success(function(data) {
+      self.user = data.userAuthentication.details.name;
+      self.authenticated = true;
+    }).error(function() {
+      self.user = "N/A";
+      self.authenticated = false;
+    });
+  });
+</script>
 
   </body>
 
 </body>
+
+</html>
+
