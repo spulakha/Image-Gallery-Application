@@ -1,6 +1,14 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
-  
+- oraclejdk8
+deploy:
+  edge: true
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: spulakha@andrew.cmu.edu
+  password:
+    secure: KU95kfarRQ/rEebhHnAVQlQxrGR5qZUZz1vEZHfsvUz75QpgGj5bVINLm0TJBkLhZ8AYdqF5bSQTV+uvH4jariOo6Dh+v97MSl2BFBVTEYs7UVg5sw/NcxvRbutLLntF2f6KwVAS7h2aAtXsutumm+KGCq4MSL9CkXXDFhTvfGQKt4mX0+X9ZsP0Bhly4CQF4J2CfS8hcWcbbQkCzSQ1P6rQdIjA5ZXTi8mCGbupknGTp66lnutrX9dQA5QPv3yVDcfjexIDa1HHhIM4Uzb+fQ7nrhNh3R7JS5bJCGhXvZhiKMuAsCxUlH1xiYoPMJziuos/qw7GIfT2EXjEB/ZSBWhLJpH4wMc+LGXDJsfZu4TBUk8BrmGgWtZQ3VAg/kg6jmgSqWpO/Kji1k6cZb0q6U9GYbnYIHZF0EW4IgrKco3PolIt/jzVWTLWj3UTde6DZupG6lvGXLTkIQrRXpAUFdV/0F3otpoNVNUGQ1HgDw+JCM1m9Axx3R0ZAjgsJICm5DDRqnlEcGrx3ghprpKjTAhv/bYxjdzlMdbD9GwXyYNXZYkzV8nlZn964smBFealmVbu55ZIy9jYkgBnBqDDRGVlf6QJJBnrc9KKMOYaYq2ok5UiyX22DDOFXTWVTlX1Jqt2SQkqqmnMCYNpbKuvX3h8vOgeP93kQt2GLEOVHLc=
+  organization: Cloud Class
+  space: development
+  on:
+    repo: spulakha/Image-Gallery-Application
